@@ -1,0 +1,115 @@
+[
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "redirect",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "requests",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "requests",
+        "description": "requests",
+        "detail": "requests",
+        "documentation": {}
+    },
+    {
+        "label": "hello",
+        "kind": 2,
+        "importPath": "backend.app",
+        "description": "backend.app",
+        "peekOfCode": "def hello():\n    return 'Hello from Flask!'\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "backend.app",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "backend.app",
+        "description": "backend.app",
+        "peekOfCode": "app = Flask(__name__)\n@app.route('/')\ndef hello():\n    return 'Hello from Flask!'\nif __name__ == '__main__':\n    app.run(host='0.0.0.0', port=5000)",
+        "detail": "backend.app",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "backend.new",
+        "description": "backend.new",
+        "peekOfCode": "def index():\n    print()\n    return redirect(\"/auth\")\n@app.route(\"/auth\")\ndef auth():\n    # LinkedIn authentication parameters\n    client_id = \"77bt7nz3gqy28r\"\n    redirect_uri = \"https://e5e7-2409-40c1-1035-7f10-cce5-507f-7872-f1bc.ngrok-free.app/callback\"\n    scope = \"r_liteprofile\"  # Requesting basic profile permissions\n    # Redirect the user to the LinkedIn authorization URL",
+        "detail": "backend.new",
+        "documentation": {}
+    },
+    {
+        "label": "auth",
+        "kind": 2,
+        "importPath": "backend.new",
+        "description": "backend.new",
+        "peekOfCode": "def auth():\n    # LinkedIn authentication parameters\n    client_id = \"77bt7nz3gqy28r\"\n    redirect_uri = \"https://e5e7-2409-40c1-1035-7f10-cce5-507f-7872-f1bc.ngrok-free.app/callback\"\n    scope = \"r_liteprofile\"  # Requesting basic profile permissions\n    # Redirect the user to the LinkedIn authorization URL\n    auth_url = f\"https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id={client_id}&redirect_uri={redirect_uri}&scope={scope}\"\n    return redirect(auth_url)\n@app.route(\"/callback\")\ndef callback():",
+        "detail": "backend.new",
+        "documentation": {}
+    },
+    {
+        "label": "callback",
+        "kind": 2,
+        "importPath": "backend.new",
+        "description": "backend.new",
+        "peekOfCode": "def callback():\n    client_id = \"77bt7nz3gqy28r\"\n    client_secret = \"woPt4tsjsLC9dQt5\"\n    redirect_uri = \"https://e5e7-2409-40c1-1035-7f10-cce5-507f-7872-f1bc.ngrok-free.app/callback\"\n    # Retrieve the authorization code from the request\n    auth_code = request.args.get(\"code\")\n    # Exchange the authorization code for an access token\n    token_url = \"https://www.linkedin.com/oauth/v2/accessToken\"\n    token_params = {\n        \"grant_type\": \"authorization_code\",",
+        "detail": "backend.new",
+        "documentation": {}
+    },
+    {
+        "label": "leads",
+        "kind": 2,
+        "importPath": "backend.new",
+        "description": "backend.new",
+        "peekOfCode": "def leads():\n    print('>>>>>access_token here in leads',access_token)\n    # LinkedIn API endpoint to retrieve leads\n    leads_url = \"https://api.linkedin.com/v2/leads\"\n    # Retrieve leads using the access token\n    headers = {\n        \"Authorization\": f\"Bearer {access_token}\",\n        \"X-Restli-Protocol-Version\": \"2.0.0\"\n    }\n    response = requests.get(leads_url, headers=headers)",
+        "detail": "backend.new",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "backend.new",
+        "description": "backend.new",
+        "peekOfCode": "app = Flask(__name__)\naccess_token = ''\n@app.route(\"/\")\ndef index():\n    print()\n    return redirect(\"/auth\")\n@app.route(\"/auth\")\ndef auth():\n    # LinkedIn authentication parameters\n    client_id = \"77bt7nz3gqy28r\"",
+        "detail": "backend.new",
+        "documentation": {}
+    },
+    {
+        "label": "access_token",
+        "kind": 5,
+        "importPath": "backend.new",
+        "description": "backend.new",
+        "peekOfCode": "access_token = ''\n@app.route(\"/\")\ndef index():\n    print()\n    return redirect(\"/auth\")\n@app.route(\"/auth\")\ndef auth():\n    # LinkedIn authentication parameters\n    client_id = \"77bt7nz3gqy28r\"\n    redirect_uri = \"https://e5e7-2409-40c1-1035-7f10-cce5-507f-7872-f1bc.ngrok-free.app/callback\"",
+        "detail": "backend.new",
+        "documentation": {}
+    }
+]
